@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:recipes/configuration/app_module_di.dart';
+import 'package:recipes/domain/di/domain_module_di.dart';
 import 'package:recipes/routing/routes.dart';
 import 'package:recipes/translations/messages.dart';
 
@@ -14,6 +15,7 @@ void main() async {
   ]);
 
   registerAppModuleDependencies();
+  registerDataModuleDependencies();
 
   runApp(const MyApp());
 }
