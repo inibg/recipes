@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Meal {
   final String idMeal;
   final String strMeal;
@@ -92,8 +90,8 @@ class Meal {
     return 'Meal{idMeal: $idMeal, strMeal: $strMeal, strDrinkAlternate: $strDrinkAlternate, strCategory: $strCategory, strArea: $strArea, strInstructions: $strInstructions, strMealThumb: $strMealThumb, strTags: $strTags, strYoutube: $strYoutube, strIngredients: $strIngredients, strMeasures: $strMeasures, strSource: $strSource, strImageSource: $strImageSource, strCreativeCommonsConfirmed: $strCreativeCommonsConfirmed, dateModified: $dateModified}';
   }
 
-  static List<Meal> fromJsonList(String response) {
-    List<dynamic> list = jsonDecode(response);
+  static List<Meal> fromJsonList(Map<String, dynamic> data) {
+    List<dynamic> list = data['meals'];
     return list.map((item) => Meal.fromJson(item)).toList();
   }
 }
